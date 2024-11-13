@@ -7,7 +7,7 @@ export const metadata = {
   title: "Cabins",
 };
 
-export default async function Page() {
+export default function Page() {
   return (
     <div className="p-4 md:p-8">
       <h1 className="text-2xl md:text-4xl mb-4 md:mb-5 text-accent-400 font-medium">
