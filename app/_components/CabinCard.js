@@ -2,11 +2,19 @@ import { UsersIcon } from "@heroicons/react/24/solid";
 
 function CabinCard({ cabin }) {
   const { id, name, maxCapacity, regularPrice, discount, image } = cabin;
+  const baseUrl =
+    "https://quspfurlhyjelrremzah.supabase.co/storage/v1/object/public/cabin-images/";
+  const match = image.match(/imageUrl\s*\+\s*"([^"]+)"/);
 
+  const filename = match ? match[1] : null;
+  const newImg = image.replace(
+    /imageUrl\s*\+\s*"([^"]+)"/g,
+    (_, filename) => `${baseUrl}${filename}`
+  );
   return (
     <div className="flex border-primary-800 border">
       <img
-        src={image}
+        src={newImg}
         alt={`Cabin ${name}`}
         className="flex-1 border-r border-primary-800"
       />
