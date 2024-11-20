@@ -1,3 +1,4 @@
+import React from "react";
 import { getBookedDatesByCabinId, getSettings } from "../_lib/data-service";
 import DateSelector from "./DateSelector";
 import ReservationForm from "./ReservationForm";
@@ -7,14 +8,15 @@ async function Reservation({ cabin }) {
     getSettings(),
     getBookedDatesByCabinId(cabin.id),
   ]);
+
   return (
-    <div className="grid grid-cols-2 border border-primary-800 min-h-[400px]">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-2 border border-primary-800 p-4 min-h-[400px] text-sm md:text-base">
       <DateSelector
         settings={settings}
         bookedDates={bookedDates}
         cabin={cabin}
-      ></DateSelector>
-      <ReservationForm cabin={cabin}></ReservationForm>
+      />
+      <ReservationForm cabin={cabin} />
     </div>
   );
 }

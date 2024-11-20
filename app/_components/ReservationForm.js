@@ -1,60 +1,47 @@
+"use client";
+import React from "react";
+
 function ReservationForm({ cabin }) {
-  // CHANGE
-  const { maxCapacity } = cabin;
-
   return (
-    <div className="scale-[1.01]">
-      <div className="bg-primary-800 text-primary-300 px-16 py-2 flex justify-between items-center">
+    <div>
+      <div className="bg-primary-800 text-primary-300 px-4 py-2 flex justify-between text-sm md:text-base">
         <p>Logged in as</p>
-
-        {/* <div className='flex gap-4 items-center'>
-          <img
-            // Important to display google profile images
-            referrerPolicy='no-referrer'
-            className='h-8 rounded-full'
-            src={user.image}
-            alt={user.name}
-          />
-          <p>{user.name}</p>
-        </div> */}
       </div>
-
-      <form className="bg-primary-900 py-10 px-16 text-lg flex gap-5 flex-col">
-        <div className="space-y-2">
-          <label htmlFor="numGuests">How many guests?</label>
+      <form className="bg-primary-900 p-4 md:p-8 flex flex-col gap-6 text-sm md:text-base">
+        <div>
+          <label htmlFor="numGuests" className="block mb-1">
+            How many guests?
+          </label>
           <select
-            name="numGuests"
             id="numGuests"
-            className="px-5 py-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm"
+            className="w-full px-3 py-2 bg-primary-200 text-primary-800 rounded"
             required
           >
-            <option value="" key="">
-              Select number of guests...
-            </option>
-            {Array.from({ length: maxCapacity }, (_, i) => i + 1).map((x) => (
-              <option value={x} key={x}>
-                {x} {x === 1 ? "guest" : "guests"}
-              </option>
-            ))}
+            <option value="">Select number of guests...</option>
+            {Array.from({ length: cabin.maxCapacity }, (_, i) => i + 1).map(
+              (x) => (
+                <option key={x} value={x}>
+                  {x} {x === 1 ? "guest" : "guests"}
+                </option>
+              )
+            )}
           </select>
         </div>
-
-        <div className="space-y-2">
-          <label htmlFor="observations">
-            Anything we should know about your stay?
+        <div>
+          <label htmlFor="observations" className="block mb-1">
+            Anything we should know?
           </label>
           <textarea
-            name="observations"
             id="observations"
-            className="px-5 py-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm"
+            className="w-full px-3 py-2 bg-primary-200 text-primary-800 rounded"
             placeholder="Any pets, allergies, special requirements, etc.?"
           />
         </div>
-
-        <div className="flex justify-end items-center gap-6">
-          <p className="text-primary-300 text-base">Start by selecting dates</p>
-
-          <button className="bg-accent-500 px-8 py-4 text-primary-800 font-semibold hover:bg-accent-600 transition-all disabled:cursor-not-allowed disabled:bg-gray-500 disabled:text-gray-300">
+        <div className="flex flex-col md:flex-row justify-end items-center gap-4">
+          <p className="text-primary-300 text-xs md:text-sm">
+            Start by selecting dates
+          </p>
+          <button className="bg-accent-500 px-6 py-3 text-primary-800 font-semibold hover:bg-accent-600">
             Reserve now
           </button>
         </div>

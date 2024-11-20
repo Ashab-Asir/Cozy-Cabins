@@ -3,6 +3,7 @@ import CabinList from "../_components/CabinList";
 import Navigation from "../_components/Navigation";
 import Spinner from "../_components/Spinner";
 import Filter from "../_components/Filter";
+import ReservationReminder from "../_components/ReservationReminder";
 export const revalidate = 0;
 export const metadata = {
   title: "Cabins",
@@ -28,6 +29,7 @@ export default function Page({ searchParams }) {
       </div>
       <Suspense fallback={<Spinner></Spinner>} key={filter}>
         <CabinList filter={filter}></CabinList>
+        <ReservationReminder></ReservationReminder>
       </Suspense>
     </div>
   );

@@ -36,5 +36,8 @@
   --rdp-accent-color: theme('colors.accent.500') !important;
   --rdp-background-color: theme('colors.accent.600') !important;
   margin: 0 !important;
-  display: flex;
+}
+
+.rdp-day_button{
+  width: 30px !important;
 }
