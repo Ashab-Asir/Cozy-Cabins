@@ -12,7 +12,7 @@ function DateSelector({ cabin, settings, bookedDates }) {
   const cabinPrice = 23;
 
   return (
-    <div className="flex flex-col justify-between gap-2 text-sm md:text-base">
+    <div className="flex flex-col text-sm md:text-base">
       <DayPicker
         mode="range"
         onSelect={setRange}
@@ -23,10 +23,9 @@ function DateSelector({ cabin, settings, bookedDates }) {
         fromDate={new Date()}
         toYear={new Date().getFullYear() + 5}
         numberOfMonths={1}
-        className="w-full"
       />
-      <div className="flex flex-col md:flex-row items-center justify-between bg-accent-500 p-4 text-primary-800">
-        <div className="flex flex-wrap gap-4">
+      <div className="flex flex-col md:flex-row items-center justify-between bg-accent-500 p-2 text-primary-800">
+        <div className="flex flex-wrap gap-2">
           <p className="text-lg md:text-xl">
             ${regularPrice - discount}
             {discount > 0 && (
