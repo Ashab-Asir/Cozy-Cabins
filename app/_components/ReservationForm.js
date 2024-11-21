@@ -1,12 +1,23 @@
 "use client";
 import React from "react";
 
-function ReservationForm({ cabin }) {
+function ReservationForm({ cabin, user }) {
   return (
     <div>
       <div className="bg-primary-800 text-primary-300 px-4 py-2 flex justify-between text-sm md:text-base">
         <p>Logged in as</p>
+        <div className="flex gap-4 items-center">
+          <img
+            // Important to display google profile images
+            referrerPolicy="no-referrer"
+            className="h-8 rounded-full"
+            src={user.image}
+            alt={user.name}
+          />
+          <p>{user.name}</p>
+        </div>
       </div>
+
       <form className="bg-primary-900 p-4 md:p-8 flex flex-col gap-6 text-sm md:text-base">
         <div>
           <label htmlFor="numGuests" className="block mb-1">
