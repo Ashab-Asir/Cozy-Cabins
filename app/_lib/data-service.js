@@ -1,6 +1,7 @@
 import { eachDayOfInterval } from "date-fns";
 import supabase from "./superbase";
 import { notFound } from "next/navigation";
+import { revalidatePath } from "next/cache";
 /////////////
 // GET
 
@@ -46,7 +47,7 @@ export const getCabins = async function () {
     console.error(error);
     throw new Error("Cabins could not be loaded");
   }
-
+  revalidatePath("/account/reservations");
   return data;
 };
 
