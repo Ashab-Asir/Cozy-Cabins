@@ -1,7 +1,24 @@
 "use client";
 import React from "react";
+import { useReservation } from "./ReservationContext";
+import { createBooking } from "../_lib/action";
+import { differenceInDays } from "date-fns";
 
 function ReservationForm({ cabin, user }) {
+  const { range, resetRange } = useReservation();
+  const { maxCapacity, regularPrice, discount, id } = cabin;
+  const startDate = range.from;
+  const endDate = range.to;
+  const numNights = differenceInDays(endDate, startDate);
+  const cabinPrice = numNights * (regularPrice - discount);
+  const bookingData = {
+    startDate,
+    endDate,
+    numNights,
+    cabinPrice,
+    cabinId: id,
+  };
+  const createBookingWithData = createBooking.bind(null, bookingData);
   return (
     <div>
       <div className="bg-primary-800 text-primary-300 px-4 py-2 flex justify-between text-sm md:text-base">
@@ -18,13 +35,20 @@ function ReservationForm({ cabin, user }) {
         </div>
       </div>
 
-      <form className="bg-primary-900 p-4 md:p-8 flex flex-col gap-6 text-sm md:text-base">
+      <form
+        action={async (formData) => {
+          await createBookingWithData(formData);
+          resetRange();
+        }}
+        className="bg-primary-900 p-4 md:p-8 flex flex-col gap-6 text-sm md:text-base"
+      >
         <div>
           <label htmlFor="numGuests" className="block mb-1">
             How many guests?
           </label>
           <select
             id="numGuests"
+            name="numGuests"
             className="w-full px-3 py-2 bg-primary-200 text-primary-800 rounded"
             required
           >
@@ -44,6 +68,7 @@ function ReservationForm({ cabin, user }) {
           </label>
           <textarea
             id="observations"
+            name="observations"
             className="w-full px-3 py-2 bg-primary-200 text-primary-800 rounded"
             placeholder="Any pets, allergies, special requirements, etc.?"
           />
