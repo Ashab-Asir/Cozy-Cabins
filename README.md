@@ -43,4 +43,3 @@
 ## 5. Live Link of the Website  
 [Visit Cozy Cabin Live](https://cozy-cabins.vercel.app/)  
 
-> *(Replace `https://your-live-link.com` with the actual deployed URL of your project)*  
