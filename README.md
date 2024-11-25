@@ -34,10 +34,10 @@
 
 ## 4. Image Preview of the Website  
 
-![Cozy Cabin Preview](./path-to-your-image.png)  
-
-> *(Replace `./path-to-your-image.png` with the actual path to your image in the repository)*  
-
+![Cozy Cabin Preview](https://github.com/Ashab-Asir/Cozy-Cabins/blob/048bd4f9fb63dfc153ca1f98fd1e4cd9974805d1/1.png)  
+![Cozy Cabin Preview](https://github.com/Ashab-Asir/Cozy-Cabins/blob/048bd4f9fb63dfc153ca1f98fd1e4cd9974805d1/2.png)  
+![Cozy Cabin Preview](https://github.com/Ashab-Asir/Cozy-Cabins/blob/048bd4f9fb63dfc153ca1f98fd1e4cd9974805d1/3.png)
+![Cozy Cabin Preview](https://github.com/Ashab-Asir/Cozy-Cabins/blob/048bd4f9fb63dfc153ca1f98fd1e4cd9974805d1/4.png)
 ---
 
 ## 5. Live Link of the Website  
