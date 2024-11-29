@@ -16,7 +16,7 @@ export default function Page({ searchParams }) {
       <h1 className="text-2xl md:text-4xl mb-4 md:mb-5 text-accent-400 font-medium">
         Our Luxury Cabins
       </h1>
-      <p className="text-primary-200 text-base md:text-lg mb-6 md:mb-10">
+      <p className="text-primary-200 text-base text-sm md:text-lg mb-6 md:mb-10">
         Cozy and luxurious cabins nestled in the heart of the Bandarban Hills or
         Sajek Valley. Picture yourself waking up to stunning mountain views,
         exploring nearby forests, or unwinding in a private hot tub under a

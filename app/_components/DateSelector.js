@@ -26,7 +26,7 @@ function DateSelector({ cabin, settings, bookedDates }) {
   const cabinPrice = numNights * (regularPrice - discount);
 
   return (
-    <div className="flex flex-col text-sm md:text-base">
+    <div className="flex flex-col text-xs md:text-base px-2">
       <DayPicker
         mode="range"
         onSelect={setRange}
@@ -42,9 +42,9 @@ function DateSelector({ cabin, settings, bookedDates }) {
           bookedDates.some((date) => isSameDay(date, curDate))
         }
       />
-      <div className="flex flex-col md:flex-row items-center justify-between bg-accent-500 p-2 text-primary-800">
+      <div className="flex lg:flex-col flex-row items-center justify-between bg-accent-500 p-2 text-primary-800">
         <div className="flex flex-wrap gap-2">
-          <p className="text-lg md:text-xl">
+          <p className="text-sm md:text-xl">
             ${regularPrice - discount}
             {discount > 0 && (
               <span className="line-through text-primary-700 pl-2">
@@ -54,9 +54,9 @@ function DateSelector({ cabin, settings, bookedDates }) {
             /night
           </p>
           {numNights && (
-            <p className="bg-accent-600 px-3 py-2">
+            <p className="bg-accent-600 px-2 py-1 md:px-3 md:py-2">
               × {numNights}
-              <span className="text-lg md:text-xl ml-2">
+              <span className="text-sm md:text-xl ml-2">
                 Total: ${cabinPrice}
               </span>
             </p>
@@ -64,7 +64,7 @@ function DateSelector({ cabin, settings, bookedDates }) {
         </div>
         {(range.from || range.to) && (
           <button
-            className="mt-4 md:mt-0 border border-primary-800 px-4 py-2 text-sm md:text-base"
+            className="mt-2 md:mt-0 border border-primary-800 px-2 py-1 md:px-4 md:py-2 text-xs md:text-sm"
             onClick={resetRange}
           >
             Clear

@@ -27,7 +27,7 @@ function ReservationForm({ cabin, user }) {
           <img
             // Important to display google profile images
             referrerPolicy="no-referrer"
-            className="h-8 rounded-full"
+            className="h-6 rounded-full"
             src={user.image}
             alt={user.name}
           />
@@ -77,7 +77,7 @@ function ReservationForm({ cabin, user }) {
           <p className="text-primary-300 text-xs md:text-sm">
             Start by selecting dates
           </p>
-          <button className="bg-accent-500 px-6 py-3 text-primary-800 font-semibold hover:bg-accent-600">
+          <button className="bg-accent-500 px-4 py-2 md:px-6 md:py-3 text-primary-800 font-semibold hover:bg-accent-600">
             Reserve now
           </button>
         </div>
