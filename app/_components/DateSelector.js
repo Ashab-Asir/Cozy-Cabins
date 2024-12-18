@@ -53,7 +53,7 @@ function DateSelector({ cabin, settings, bookedDates }) {
             )}
             /night
           </p>
-          {numNights > 0 && (
+          {numNights > 0 && ( // Ensure numNights is greater than 0 before displaying
             <p className="bg-accent-600 px-2 py-1 md:px-3 md:py-2">
               × {numNights}
               <span className="text-sm md:text-xl ml-2">
@@ -62,14 +62,6 @@ function DateSelector({ cabin, settings, bookedDates }) {
             </p>
           )}
         </div>
-        {(range.from || range.to) && (
-          <button
-            className="mt-2 md:mt-0 border border-primary-800 px-2 py-1 md:px-4 md:py-2 text-xs md:text-sm"
-            onClick={resetRange}
-          >
-            Clear
-          </button>
-        )}
       </div>
     </div>
   );
