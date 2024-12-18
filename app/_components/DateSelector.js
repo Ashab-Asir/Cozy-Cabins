@@ -53,7 +53,7 @@ function DateSelector({ cabin, settings, bookedDates }) {
             )}
             /night
           </p>
-          {numNights && (
+          {numNights > 0 && (
             <p className="bg-accent-600 px-2 py-1 md:px-3 md:py-2">
               × {numNights}
               <span className="text-sm md:text-xl ml-2">
